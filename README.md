@@ -1,4 +1,12 @@
-# Getting Started with Create React App
+# TeamFul
+
+Project Managment System fullstack project
+
+## Author: Tomas Szwarcberg
+
+Templates from "https://chakra-templates.dev/"
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

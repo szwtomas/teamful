@@ -6,14 +6,19 @@ import SignUp from "./pages/SignUp";
 import LogIn from "./pages/LogIn";
 import About from "./pages/About";
 import Dashboard from "./pages/Dashboard";
+import SideBar from "./components/SideBar.js";
+import "./global.css";
 
 const App = () => {
 	return (
 		<div>
+			<NavBar />
+			<SideBar />
+
 			<div className="app">
 				<Router>
 					<Routes>
-						<Route path="/" element={<NavBar />} />
+						<Route path="/" element={<p>Hola</p>} />
 						<Route path="/home" element={<Home />} />
 						<Route path="/signup" element={<SignUp />} />
 						<Route path="/login" element={<LogIn />} />

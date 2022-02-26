@@ -11,6 +11,7 @@ import {
 	useColorModeValue,
 } from "@chakra-ui/react";
 import { HamburgerIcon, BellIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
+import ProfileImage from "./../assets/images/profile-example.jpeg";
 
 const NavBar = () => {
 	const { colorMode, toggleColorMode } = useColorMode();
@@ -23,7 +24,7 @@ const NavBar = () => {
 		<nav>
 			<Box boxShadow={"0 2px 10px 0 rgba(0,0,0,.3)"} bg={bg}>
 				<Flex
-					h={20}
+					h={"8vh"}
 					alignItems={"center"}
 					justifyContent={"space-between"}
 					px={[6, 10, 16]}
@@ -31,10 +32,15 @@ const NavBar = () => {
 					<IconButton
 						p={0}
 						size={"md"}
-						icon={isOpen ? null : <HamburgerIcon />}
+						icon={isOpen ? null : <HamburgerIcon fontSize="28px" />}
 						aria-label={"Open Menu"}
 						display={{ md: "none" }}
 						onClick={isOpen ? onClose : onOpen}
+						bg="none"
+						color="gray.200"
+						_hover={{
+							background: "none",
+						}}
 					/>
 					<Box as={"h3"}>
 						<Text fontSize={"4xl"} fontWeight={"bold"} color={textColor}>
@@ -67,7 +73,12 @@ const NavBar = () => {
 								color={"gray.100"}
 							/>
 						</Stack>
-						<Avatar name="Tomas Szwarcberg" colorScheme="ghost" />
+						<Avatar
+							name="Tomas Szwarcberg"
+							colorScheme="ghost"
+							src={ProfileImage}
+							size="md"
+						/>
 					</Stack>
 				</Flex>
 			</Box>

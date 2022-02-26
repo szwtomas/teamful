@@ -20,6 +20,8 @@ import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 const SignUp = () => {
 	const [showPassword, setShowPassword] = useState(false);
 
+	const descriptionColor = useColorModeValue("gray.600", "gray.300");
+
 	return (
 		<Flex
 			minH={"100vh"}
@@ -32,14 +34,14 @@ const SignUp = () => {
 					<Heading fontSize={"4xl"} textAlign={"center"}>
 						Sign up
 					</Heading>
-					<Text fontSize={"lg"} color={"gray.600"}>
+					<Text fontSize={"lg"} color={descriptionColor}>
 						To start working on a project
 					</Text>
 				</Stack>
 				<Box
 					rounded={"lg"}
 					bg={useColorModeValue("white", "gray.700")}
-					boxShadow={"xl"}
+					boxShadow={"2xl"}
 					p={8}
 				>
 					<Stack spacing={4}>

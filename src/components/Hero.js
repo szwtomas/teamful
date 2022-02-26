@@ -9,7 +9,8 @@ import {
 	Flex,
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
-import HeroImg from "../assets/hero.png";
+import HeroImg from "../assets/images/hero.png";
+import { useColorModeValue } from "@chakra-ui/react";
 
 const Hero = () => {
 	let navigate = useNavigate();
@@ -17,28 +18,33 @@ const Hero = () => {
 	const handleSignUpClick = () => navigate("/signup");
 	const handleLearnMoreClick = () => navigate("/about");
 
+	const learnMoreBtnBg = useColorModeValue(null, "#ffffff");
+	const learnMoreBtnColor = useColorModeValue("green.400", "green.400");
+	const descriptionColor = useColorModeValue("gray.500", "gray.300");
+
 	return (
 		<Container maxW={"5xl"}>
 			<Stack
 				textAlign={"center"}
 				align={"center"}
 				spacing={{ base: 8, md: 10 }}
-				py={{ base: 20, md: 28 }}
+				py={8}
 			>
 				<Heading
 					fontWeight={600}
-					fontSize={{ base: "3xl", sm: "4xl", md: "6xl" }}
+					fontSize={{ base: "3xl", sm: "4xl", md: "5xl" }}
 					lineHeight={"110%"}
+					letterSpacing={1}
 				>
 					Project Managment{" "}
 					<Text as={"span"} color={"green.400"}>
 						made easy
 					</Text>
 				</Heading>
-				<Text color={"gray.500"} maxW={"3xl"}>
-					Organize your project, assign task to different team
-					members, keep track of bugs and mark their priority in a
-					simple manner. use all features completely free.
+				<Text letterSpacing={1} color={descriptionColor} maxW={"3xl"}>
+					Organize your project, assign task to different team members, keep
+					track of bugs and mark their priority in a simple manner. use all
+					features completely free.
 				</Text>
 				<Stack spacing={6} direction={"row"}>
 					<Button
@@ -55,6 +61,8 @@ const Hero = () => {
 						onClick={handleLearnMoreClick}
 						rounded={"full"}
 						px={6}
+						bg={learnMoreBtnBg}
+						color={learnMoreBtnColor}
 					>
 						Learn more
 					</Button>

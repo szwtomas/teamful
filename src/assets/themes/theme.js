@@ -7,7 +7,7 @@ const config = {
 };
 
 const colors = {
-	primary: "green.400",
+	brand: "green.400",
 };
 
 const fontSizes = {

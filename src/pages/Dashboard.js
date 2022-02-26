@@ -18,7 +18,7 @@ const Dashboard = () => {
 	return (
 		<Box>
 			<Heading as={"h2"} textAlign="center" mt={5}>
-				{project.title}
+				Dashboard: Work in Progress
 			</Heading>
 		</Box>
 	);

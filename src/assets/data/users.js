@@ -1,5 +1,4 @@
 // Simulates users api
-
 const users = [
 	{
 		id: 1,

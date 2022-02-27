@@ -1,15 +1,7 @@
 import React from "react";
-import {
-	IconButton,
-	Link,
-	scaleFadeConfig,
-	Stack,
-	Text,
-	Icon,
-} from "@chakra-ui/react";
-import { SunIcon } from "@chakra-ui/icons";
+import { Link, Stack, Text, Icon } from "@chakra-ui/react";
 
-const SideBarItem = ({ labelIcon, path, label, asideIsLarge }, children) => {
+const SideBarItem = ({ labelIcon, label, asideIsLarge, onOverlay = false }) => {
 	return (
 		<Link
 			transition={"all 0.25s ease"}
@@ -25,7 +17,11 @@ const SideBarItem = ({ labelIcon, path, label, asideIsLarge }, children) => {
 					transition={"all 0.2s ease"}
 					_hover={asideIsLarge ? "" : { transform: "scale(1.2)" }}
 				/>
-				{asideIsLarge && <Text fontSize="20px">{label}</Text>}
+				{(asideIsLarge || onOverlay) && (
+					<Text color="black" fontSize="20px">
+						{label}
+					</Text>
+				)}
 			</Stack>
 		</Link>
 	);

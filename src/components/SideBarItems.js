@@ -6,7 +6,7 @@ import { AiOutlineFundProjectionScreen } from "react-icons/ai";
 import { GrProjects } from "react-icons/gr";
 import SideBarItem from "./SideBarItem";
 
-const SideBarItems = ({ asideIsLarge }) => {
+const SideBarItems = ({ asideIsLarge, onOverlay }) => {
 	return (
 		<Stack spacing={10} direction="column">
 			<SideBarItem
@@ -14,6 +14,7 @@ const SideBarItems = ({ asideIsLarge }) => {
 				path="/"
 				asideIsLarge={asideIsLarge}
 				labelIcon={GrProjects}
+				onOverlay={onOverlay}
 			/>
 
 			<SideBarItem
@@ -21,18 +22,21 @@ const SideBarItems = ({ asideIsLarge }) => {
 				labelIcon={FaTicketAlt}
 				path="/"
 				asideIsLarge={asideIsLarge}
+				onOverlay={onOverlay}
 			/>
 			<SideBarItem
 				label="Dashboard"
 				labelIcon={MdDashboard}
 				path="/"
 				asideIsLarge={asideIsLarge}
+				onOverlay={onOverlay}
 			/>
 			<SideBarItem
 				label="Project Board"
 				labelIcon={AiOutlineFundProjectionScreen}
 				path="/"
 				asideIsLarge={asideIsLarge}
+				onOverlay={onOverlay}
 			/>
 		</Stack>
 	);

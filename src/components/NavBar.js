@@ -9,8 +9,21 @@ import {
 	Stack,
 	useColorMode,
 	useColorModeValue,
+	Drawer,
+	DrawerBody,
+	DrawerOverlay,
+	DrawerHeader,
+	DrawerContent,
+	Heading,
 } from "@chakra-ui/react";
-import { HamburgerIcon, BellIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
+import {
+	HamburgerIcon,
+	BellIcon,
+	MoonIcon,
+	SunIcon,
+	CloseIcon,
+} from "@chakra-ui/icons";
+import SideBarItems from "./SideBarItems";
 import ProfileImage from "./../assets/images/profile-example.jpeg";
 
 const NavBar = () => {
@@ -19,6 +32,10 @@ const NavBar = () => {
 
 	const bg = useColorModeValue("green.400", "green.400");
 	const textColor = useColorModeValue("gray.200", "gray.800");
+
+	const handleOpenMenuClick = () => {
+		onOpen();
+	};
 
 	// Temp
 	const projectName = "Shoppio";
@@ -39,7 +56,7 @@ const NavBar = () => {
 						icon={isOpen ? null : <HamburgerIcon fontSize="28px" />}
 						aria-label={"Open Menu"}
 						display={["flex", "flex", "none"]}
-						onClick={isOpen ? onClose : onOpen}
+						onClick={handleOpenMenuClick}
 						bg="none"
 						color="gray.200"
 						_hover={{
@@ -85,6 +102,35 @@ const NavBar = () => {
 						/>
 					</Stack>
 				</Flex>
+				<Drawer onClose={onClose} isOpen={isOpen} size={"full"}>
+					<DrawerOverlay />
+					<DrawerContent>
+						<DrawerHeader>
+							<Stack direction="column">
+								<Flex width="100%" justifyContent={"flex-end"} pr="10px">
+									<IconButton
+										icon={<CloseIcon fontSize={"xl"} />}
+										bg="none"
+										color="black"
+										_hover={{
+											background: "none",
+										}}
+										aria-label="close overlay menu"
+										onClick={onClose}
+									/>
+								</Flex>
+								<Heading as="h2" textAlign={"center"} fontSize="5xl">
+									Teamful
+								</Heading>
+							</Stack>
+						</DrawerHeader>
+						<DrawerBody>
+							<Flex alignItems={"center"} justifyContent="center" mt="20px">
+								<SideBarItems onOverlay="true" />
+							</Flex>
+						</DrawerBody>
+					</DrawerContent>
+				</Drawer>
 			</Box>
 		</nav>
 	);

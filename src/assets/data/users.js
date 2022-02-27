@@ -1,3 +1,5 @@
+import { getProjects } from "./projects";
+
 // Simulates users api
 const users = [
 	{
@@ -42,4 +44,19 @@ const getUserById = id => {
 	});
 };
 
-export { getUserById };
+const userExists = id => {
+	return users.some(u => u.id === id);
+};
+
+// For now, always returns all the projects on "./projects" or rejects if user doesen't exist
+const getUserProjects = id => {
+	return new Promise((resolve, reject) => {
+		if (!userExists(id)) {
+			reject("User not found");
+			return;
+		}
+		resolve(getProjects);
+	});
+};
+
+export { getUserById, getUserProjects };

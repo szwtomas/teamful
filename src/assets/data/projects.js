@@ -40,4 +40,8 @@ const getProjectById = id => {
 	});
 };
 
-export { getProjectById };
+const getProjects = () => {
+	return projects;
+};
+
+export { getProjects, getProjectById };

@@ -1,12 +1,11 @@
 import React from "react";
-import NavBar from "./components/NavBar.js";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import SignUp from "./pages/SignUp";
 import LogIn from "./pages/LogIn";
 import About from "./pages/About";
+import UserProjectsPage from "./pages/UserProjectsPage";
 import Dashboard from "./pages/Dashboard";
-import SideBar from "./components/SideBar.js";
 
 const App = () => {
 	return (
@@ -20,6 +19,9 @@ const App = () => {
 					<Route path="/about" element={<About />} />
 					<Route path="/:projectId">
 						<Route path="dashboard" element={<Dashboard />} />
+					</Route>
+					<Route path="/:userId">
+						<Route path="projects" element={<UserProjectsPage />} />
 					</Route>
 				</Routes>
 			</Router>

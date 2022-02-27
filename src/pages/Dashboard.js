@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getProjectById } from "../assets/data/projects";
-import { Box, Heading } from "@chakra-ui/react";
+import Layout from "../components/Layout";
 
 const Dashboard = () => {
 	const params = useParams();
@@ -16,11 +16,9 @@ const Dashboard = () => {
 	}, [projectId]);
 
 	return (
-		<Box>
-			<Heading as={"h2"} textAlign="center" mt={5}>
-				Dashboard: Work in Progress
-			</Heading>
-		</Box>
+		<Layout>
+			<span>Hola</span>
+		</Layout>
 	);
 };
 

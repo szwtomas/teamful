@@ -20,11 +20,15 @@ const NavBar = () => {
 	const bg = useColorModeValue("green.400", "green.400");
 	const textColor = useColorModeValue("gray.200", "gray.800");
 
+	// Temp
+	const projectName = "Shoppio";
+
 	return (
-		<nav>
-			<Box boxShadow={"0 2px 10px 0 rgba(0,0,0,.3)"} bg={bg}>
+		<nav style={{ overflow: "hidden" }}>
+			<Box bg={bg} overflow="hidden">
 				<Flex
 					h={"8vh"}
+					minHeight={"65px"}
 					alignItems={"center"}
 					justifyContent={"space-between"}
 					px={[6, 10, 16]}
@@ -34,7 +38,7 @@ const NavBar = () => {
 						size={"md"}
 						icon={isOpen ? null : <HamburgerIcon fontSize="28px" />}
 						aria-label={"Open Menu"}
-						display={{ md: "none" }}
+						display={["flex", "flex", "none"]}
 						onClick={isOpen ? onClose : onOpen}
 						bg="none"
 						color="gray.200"
@@ -43,8 +47,8 @@ const NavBar = () => {
 						}}
 					/>
 					<Box as={"h3"}>
-						<Text fontSize={"4xl"} fontWeight={"bold"} color={textColor}>
-							Shoppio
+						<Text fontSize={"2xl"} fontWeight={"bold"} color={textColor}>
+							{projectName} Workspace
 						</Text>
 					</Box>
 
@@ -53,7 +57,7 @@ const NavBar = () => {
 							<IconButton
 								icon={<BellIcon fontSize={"3xl"} />}
 								aria-label={"Open Notifications"}
-								display={{ sm: "none", md: "block" }}
+								display={["none", "none", "flex"]}
 								variant="ghost"
 								color={"gray.100"}
 							/>
@@ -67,7 +71,7 @@ const NavBar = () => {
 									)
 								}
 								aria-label={"Toggle Color Scheme"}
-								display={{ sm: "none", md: "block" }}
+								display={["none", "none", "flex"]}
 								onClick={toggleColorMode}
 								variant="ghost"
 								color={"gray.100"}

@@ -71,7 +71,7 @@ const UserProjectsPage = () => {
 					mr="auto"
 					ml="auto"
 				>
-					<Table variant="simple">
+					<Table variant="simple" size="lg">
 						<Thead>
 							<Tr>
 								<Th fontSize="lg" fontWeight={"bold"}>

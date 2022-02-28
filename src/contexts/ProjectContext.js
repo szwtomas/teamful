@@ -3,22 +3,19 @@ import { getProjectById } from "../assets/data/projects";
 
 const ProjectContext = createContext();
 
+// Current project has to always be set with setProject setter
 const ProjectContextProvider = ({ value = {}, children }) => {
 	const [project, setProject] = useState(value);
 
-	// React doesen't update state when re-rendering with different props
-	// So we set the project manually (don't know if this is the best way)
-	useEffect(() => setProject(value), [value]);
-
 	// Fetches project with matching id and sets it
-	const setId = id => {
+	const setProjectWithId = id => {
 		getProjectById(id)
 			.then(p => setProject(p))
 			.catch(err => console.error(err));
 	};
 
 	return (
-		<ProjectContext.Provider value={{ project, setProject, setId }}>
+		<ProjectContext.Provider value={{ project, setProject, setProjectWithId }}>
 			{children}
 		</ProjectContext.Provider>
 	);

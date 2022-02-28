@@ -9,6 +9,7 @@ import {
 	Stack,
 	useColorMode,
 	useColorModeValue,
+	useBreakpointValue,
 	Drawer,
 	DrawerBody,
 	DrawerOverlay,
@@ -26,19 +27,18 @@ import {
 import SideBarItems from "./SideBarItems";
 import ProfileImage from "./../assets/images/profile-example.jpeg";
 
-const NavBar = () => {
+const NavBar = ({ projectTitle }) => {
 	const { colorMode, toggleColorMode } = useColorMode();
 	const { isOpen, onOpen, onClose } = useDisclosure();
 
 	const bg = useColorModeValue("green.400", "green.400");
 	const textColor = useColorModeValue("gray.200", "gray.800");
 
+	const titleText = useBreakpointValue(["", "", "Workspace"]);
+
 	const handleOpenMenuClick = () => {
 		onOpen();
 	};
-
-	// Temp
-	const projectName = "Shoppio";
 
 	return (
 		<nav style={{ overflow: "hidden" }}>
@@ -64,8 +64,14 @@ const NavBar = () => {
 						}}
 					/>
 					<Box as={"h3"}>
-						<Text fontSize={"2xl"} fontWeight={"bold"} color={textColor}>
-							{projectName} Workspace
+						<Text
+							fontSize={["md", "2xl"]}
+							fontWeight={"bold"}
+							color={textColor}
+						>
+							{projectTitle
+								? `${projectTitle} ${titleText}`
+								: "Tomas Workspace"}
 						</Text>
 					</Box>
 

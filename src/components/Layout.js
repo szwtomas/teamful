@@ -40,9 +40,9 @@ const Layout = ({ children }) => {
 
 	return (
 		<ProjectContextProvider value={currentProject}>
-			<NavBar />
+			<NavBar projectTitle={currentProject.title} />
 			<Flex flexDir={"row"} m={0} p={0}>
-				<SideBar />
+				<SideBar projectId={currentProject.id} />
 				<Flex width="94%" mr="auto" ml="auto">
 					{children}
 				</Flex>

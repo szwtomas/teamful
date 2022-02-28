@@ -11,9 +11,12 @@ import {
 	Tbody,
 	Link as StyledLink,
 	Flex,
+	Stack,
+	Button,
 } from "@chakra-ui/react";
 import { getUserProjects } from "../assets/data/users";
 import { Link as RouterLink } from "react-router-dom";
+import { AddIcon } from "@chakra-ui/icons";
 
 const UserProjectsPage = () => {
 	const params = useParams();
@@ -49,35 +52,63 @@ const UserProjectsPage = () => {
 
 	return (
 		<Layout>
-			<Flex
-				h="100%"
+			<Stack
+				direction="column"
 				w="100%"
-				maxWidth={"1250px"}
-				direction="row"
-				alignItems={"center"}
-				justifyContent="center"
-				mt="35px"
 				mr="auto"
 				ml="auto"
+				maxWidth={"1050px"}
+				mt={"20px"}
+				spacing={5}
 			>
-				<Table variant="simple">
-					<TableCaption>Tomas projects</TableCaption>
-					<Thead>
-						<Tr>
-							<Th fontSize="lg" fontWeight={"bold"}>
-								Project name
-							</Th>
-							<Th fontSize="lg" fontWeight={"bold"}>
-								Role
-							</Th>
-							<Th fontSize="lg" fontWeight={"bold"}>
-								Dashboard Link
-							</Th>
-						</Tr>
-					</Thead>
-					<Tbody>{getProjectElements()}</Tbody>
-				</Table>
-			</Flex>
+				<Flex
+					w="100%"
+					maxWidth={"1250px"}
+					direction="row"
+					alignItems={"center"}
+					justifyContent="center"
+					mt="35px"
+					mr="auto"
+					ml="auto"
+				>
+					<Table variant="simple">
+						<Thead>
+							<Tr>
+								<Th fontSize="lg" fontWeight={"bold"}>
+									Project name
+								</Th>
+								<Th fontSize="lg" fontWeight={"bold"}>
+									Role
+								</Th>
+								<Th fontSize="lg" fontWeight={"bold"}>
+									Dashboard Link
+								</Th>
+							</Tr>
+						</Thead>
+						<Tbody>{getProjectElements()}</Tbody>
+					</Table>
+				</Flex>
+				<Flex
+					direction="row"
+					justifyContent={["center", "center", "flex-end", "flex-end"]}
+					alignItems="center"
+					w={["100%", "100%", "85%", "85%"]}
+				>
+					<Button
+						w={"160px"}
+						h="48px"
+						bg="green.400"
+						color="white"
+						rightIcon={<AddIcon />}
+						fontSize={"lg"}
+						_hover={{
+							background: "green.500",
+						}}
+					>
+						New Project
+					</Button>
+				</Flex>
+			</Stack>
 		</Layout>
 	);
 };

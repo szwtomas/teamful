@@ -11,7 +11,7 @@ const SideBarItems = ({ asideIsLarge, onOverlay }) => {
 		<Stack spacing={10} direction="column">
 			<SideBarItem
 				label="My Projects"
-				path="/1/projects"
+				path="/szwtomas/projects"
 				asideIsLarge={asideIsLarge}
 				labelIcon={GrProjects}
 				onOverlay={onOverlay}

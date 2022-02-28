@@ -1,30 +1,13 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import SignUp from "./pages/SignUp";
-import LogIn from "./pages/LogIn";
-import About from "./pages/About";
-import UserProjectsPage from "./pages/UserProjectsPage";
-import Dashboard from "./pages/Dashboard";
+import RoutesWrapper from "./pages/Routes";
+import { ProjectContextProvider } from "./contexts/ProjectContext";
 
 const App = () => {
 	return (
 		<div className="app">
-			<Router>
-				<Routes>
-					<Route path="/" element={<Home />} />
-					<Route path="/home" element={<Home />} />
-					<Route path="/signup" element={<SignUp />} />
-					<Route path="/login" element={<LogIn />} />
-					<Route path="/about" element={<About />} />
-					<Route path="/:projectId">
-						<Route path="dashboard" element={<Dashboard />} />
-					</Route>
-					<Route path="/:userId">
-						<Route path="projects" element={<UserProjectsPage />} />
-					</Route>
-				</Routes>
-			</Router>
+			<ProjectContextProvider>
+				<RoutesWrapper />
+			</ProjectContextProvider>
 		</div>
 	);
 };

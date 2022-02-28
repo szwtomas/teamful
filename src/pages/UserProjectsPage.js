@@ -1,34 +1,41 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Layout from "../components/Layout";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import {
 	Table,
 	Thead,
 	Td,
 	Tr,
 	Th,
-	TableCaption,
 	Tbody,
 	Link as StyledLink,
 	Flex,
 	Stack,
 	Button,
 } from "@chakra-ui/react";
+import ProjectContext from "../contexts/ProjectContext";
 import { getUserProjects } from "../assets/data/users";
-import { Link as RouterLink } from "react-router-dom";
 import { AddIcon } from "@chakra-ui/icons";
 
 const UserProjectsPage = () => {
-	const params = useParams();
+	const { username } = useParams();
 	const [projects, setProjects] = useState([]);
 
-	const userId = parseInt(params.userId);
+	const context = useContext(ProjectContext);
+	console.log(context);
+
+	let navigate = useNavigate();
 
 	useEffect(() => {
-		getUserProjects(userId)
+		getUserProjects(username)
 			.then(proj => setProjects(proj))
 			.catch(err => console.error(err));
-	}, [userId]);
+	}, [username]);
+
+	const handleClick = id => {
+		// setProjectWithId(id);
+		navigate("/dashboard");
+	};
 
 	const getProjectElements = () => {
 		return projects.map(p => {
@@ -37,11 +44,7 @@ const UserProjectsPage = () => {
 					<Td fontWeight={"bold"}>{p.title}</Td>
 					<Td>{"Admin"}</Td>
 					<Td>
-						<StyledLink
-							as={RouterLink}
-							color="green.400"
-							to={`/${p.id}/dashboard`}
-						>
+						<StyledLink onClick={() => handleClick(p.id)} color="green.400">
 							To Dashboard
 						</StyledLink>
 					</Td>

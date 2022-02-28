@@ -44,14 +44,14 @@ const getUserById = id => {
 	});
 };
 
-const userExists = id => {
-	return users.some(u => u.id === id);
+const userExists = username => {
+	return users.some(u => u.userName === username);
 };
 
 // For now, always returns all the projects on "./projects" or rejects if user doesen't exist
-const getUserProjects = id => {
+const getUserProjects = username => {
 	return new Promise((resolve, reject) => {
-		if (!userExists(id)) {
+		if (!userExists(username)) {
 			reject("User not found");
 			return;
 		}

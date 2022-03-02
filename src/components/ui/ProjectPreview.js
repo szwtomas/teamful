@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import ProjectContext from "../contexts/ProjectContext";
+import ProjectContext from "../../contexts/ProjectContext";
 import { Flex, Heading, Text, Link } from "@chakra-ui/react";
 
 const ProjectPreview = () => {

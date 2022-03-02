@@ -9,8 +9,8 @@ import {
 	Heading,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
-import ProfileImage from "../assets/images/profile-example.jpeg";
-import SideBarItems from "./SideBarItems";
+import ProfileImage from "../../assets/images/profile-example.jpeg";
+import SideBarItems from "../containers/SideBarItems";
 
 const SideBar = () => {
 	const [asideIsLarge, setAsideIsLarge] = useState(true);

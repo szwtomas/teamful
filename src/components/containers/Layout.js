@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useContext } from "react";
-import NavBar from "./NavBar";
+import NavBar from "../ui/NavBar";
 import { Flex } from "@chakra-ui/react";
-import SideBar from "./SideBar";
-import { ProjectContextProvider } from "../contexts/ProjectContext";
-import ProjectContext from "../contexts/ProjectContext";
+import SideBar from "../ui/SideBar";
+import { ProjectContextProvider } from "../../contexts/ProjectContext";
+import ProjectContext from "../../contexts/ProjectContext";
+// import { ProjectContextProvider } from "contexts/ProjectContext";
 
 /*
 Layout component puts page content under the navbar and at the right side of sidebar

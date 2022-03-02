@@ -4,7 +4,7 @@ import { MdDashboard } from "react-icons/md";
 import { FaTicketAlt } from "react-icons/fa";
 import { AiOutlineFundProjectionScreen } from "react-icons/ai";
 import { GrProjects } from "react-icons/gr";
-import SideBarItem from "./SideBarItem";
+import SideBarItem from "../ui/SideBarItem";
 
 const SideBarItems = ({ asideIsLarge, onOverlay }) => {
 	return (

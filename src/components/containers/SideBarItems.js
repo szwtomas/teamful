@@ -1,10 +1,10 @@
 import React from "react";
-import { Icon, Stack } from "@chakra-ui/react";
+import { Stack } from "@chakra-ui/react";
 import { MdDashboard } from "react-icons/md";
 import { FaTicketAlt } from "react-icons/fa";
 import { AiOutlineFundProjectionScreen } from "react-icons/ai";
 import { GrProjects } from "react-icons/gr";
-import SideBarItem from "../ui/SideBarItem";
+import SideBarItem from "components/ui/SideBarItem";
 
 const SideBarItems = ({ asideIsLarge, onOverlay }) => {
 	return (

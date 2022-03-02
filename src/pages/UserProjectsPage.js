@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useContext } from "react";
-import Layout from "../components/containers/Layout";
 import { useParams, useNavigate } from "react-router-dom";
 import { Stack } from "@chakra-ui/react";
-import UserProjectsTable from "../components/ui/UserProjectsTable";
-import NoProjectsDisplay from "../components/containers/NoProjectsDisplay";
-import ProjectContext from "../contexts/ProjectContext";
-import { getUserProjects } from "../assets/data/users";
+import Layout from "components/containers/Layout";
+import UserProjectsTable from "components/ui/UserProjectsTable";
+import NoProjectsDisplay from "components/containers/NoProjectsDisplay";
+import ProjectContext from "contexts/ProjectContext";
+import { getUserProjects } from "assets/data/users";
 
 const UserProjectsPage = () => {
 	const { username } = useParams();

@@ -1,6 +1,6 @@
 import React from "react";
 import { Flex, Heading, Text } from "@chakra-ui/react";
-import CreateProjectButton from "../ui/CreateProjectButton";
+import CreateProjectButton from "components/ui/CreateProjectButton";
 
 const NoProjectsDisplay = () => {
 	return (

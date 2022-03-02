@@ -1,4 +1,4 @@
-import { getProjects } from "./projects";
+import { getProjects } from "assets/data/projects";
 
 // Simulates users api
 const users = [

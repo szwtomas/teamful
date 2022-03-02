@@ -9,7 +9,7 @@ import {
 	Flex,
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
-import HeroImg from "../assets/images/hero.png";
+import HeroImg from "assets/images/hero.png";
 import { useColorModeValue } from "@chakra-ui/react";
 
 const Hero = () => {

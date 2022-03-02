@@ -24,8 +24,8 @@ import {
 	SunIcon,
 	CloseIcon,
 } from "@chakra-ui/icons";
-import SideBarItems from "../containers/SideBarItems";
-import ProfileImage from "../../assets/images/profile-example.jpeg";
+import SideBarItems from "components/containers/SideBarItems";
+import ProfileImage from "assets/images/profile-example.jpeg";
 
 const NavBar = ({ projectTitle }) => {
 	const { colorMode, toggleColorMode } = useColorMode();

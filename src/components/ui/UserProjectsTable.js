@@ -1,6 +1,6 @@
 import React from "react";
 import { Flex, Table, Thead, Tr, Td, Th, Tbody, Link } from "@chakra-ui/react";
-import CreateProjectButton from "./CreateProjectButton";
+import CreateProjectButton from "components/ui/CreateProjectButton";
 
 const UserProjectsTable = ({ projects, handleClick }) => {
 	const getProjectElements = () => {

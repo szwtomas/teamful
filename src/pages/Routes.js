@@ -16,9 +16,9 @@ const RoutesWrapper = () => {
 				<Route path="/signup" element={<SignUp />} />
 				<Route path="/login" element={<LogIn />} />
 				<Route path="/about" element={<About />} />
-				<Route path="dashboard" element={<Dashboard />} />
 				<Route path="/:username">
 					<Route path="projects" element={<UserProjectsPage />} />
+					<Route path="dashboard" element={<Dashboard />} />
 				</Route>
 			</Routes>
 		</BrowserRouter>

@@ -3,6 +3,7 @@ import Layout from "../components/Layout";
 import { useParams, useNavigate } from "react-router-dom";
 import { Stack } from "@chakra-ui/react";
 import UserProjectsTable from "../components/UserProjectsTable";
+import NoProjectsDisplay from "../components/NoProjectsDisplay";
 import ProjectContext from "../contexts/ProjectContext";
 import { getUserProjects } from "../assets/data/users";
 
@@ -20,9 +21,10 @@ const UserProjectsPage = () => {
 			.catch(err => console.error(err));
 	}, [username]);
 
+	// TODO: Make navigation generic
 	const goToDashboard = id => {
 		setProjectWithId(id);
-		navigate("/dashboard");
+		navigate("/szwtomas/dashboard");
 	};
 
 	return (
@@ -36,7 +38,10 @@ const UserProjectsPage = () => {
 				mt={"20px"}
 				spacing={5}
 			>
-				<UserProjectsTable projects={projects} handleClick={goToDashboard} />
+				{projects.length > 0 && (
+					<UserProjectsTable projects={projects} handleClick={goToDashboard} />
+				)}
+				{projects.length === 0 && <NoProjectsDisplay />}
 			</Stack>
 		</Layout>
 	);

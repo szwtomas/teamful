@@ -14,8 +14,12 @@ const ProjectContextProvider = ({ value = {}, children }) => {
 			.catch(err => console.error(err));
 	};
 
+	const existsCurrentProject = () => Object.keys(project).length !== 0;
+
 	return (
-		<ProjectContext.Provider value={{ project, setProject, setProjectWithId }}>
+		<ProjectContext.Provider
+			value={{ project, setProject, setProjectWithId, existsCurrentProject }}
+		>
 			{children}
 		</ProjectContext.Provider>
 	);

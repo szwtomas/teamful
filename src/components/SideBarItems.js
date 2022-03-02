@@ -27,7 +27,7 @@ const SideBarItems = ({ asideIsLarge, onOverlay }) => {
 			<SideBarItem
 				label="Dashboard"
 				labelIcon={MdDashboard}
-				path="/"
+				path="/szwtomas/dashboard"
 				asideIsLarge={asideIsLarge}
 				onOverlay={onOverlay}
 			/>

@@ -1,9 +1,9 @@
-import React, { useState, useEffect, createContext } from "react";
-import { getProjectById } from "../assets/data/projects";
+import React, { useState, createContext } from "react";
+import { getProjectById } from "assets/data/projects";
 
 const ProjectContext = createContext();
 
-// Current project has to always be set with setProject setter
+// Current project has to be set with setProject
 const ProjectContextProvider = ({ value = {}, children }) => {
 	const [project, setProject] = useState(value);
 

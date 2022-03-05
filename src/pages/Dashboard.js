@@ -5,22 +5,15 @@ import ProjectContext from "contexts/ProjectContext";
 import ProjectSelection from "components/ui/ProjectSelection";
 import { Flex, Stack } from "@chakra-ui/react";
 import MembersPreview from "components/ui/MembersPreview";
+import TicketsPreview from "components/containers/TicketsPreview";
 
 // TODO: Fill with ProjectPreview, MembersPreview and TicketsPreview Components (and statistics?)
 const Dashboard = () => {
 	const { existsCurrentProject } = useContext(ProjectContext);
 
-	return (
-		<Layout>
-			{existsCurrentProject() && (
-				<Flex flexDir="column" ml={"auto"} mr="auto" w="90%" maxW={"925px"}>
-					<Stack direction="column" spacing="25px">
-						<ProjectPreview />
-						<MembersPreview />
-					</Stack>
-				</Flex>
-			)}
-			{!existsCurrentProject() && (
+	if (!existsCurrentProject()) {
+		return (
+			<Layout>
 				<Flex
 					justifyContent={"center"}
 					ml={"auto"}
@@ -29,7 +22,19 @@ const Dashboard = () => {
 				>
 					<ProjectSelection />
 				</Flex>
-			)}
+			</Layout>
+		);
+	}
+
+	return (
+		<Layout>
+			<Flex flexDir="column" ml={"auto"} mr="auto" w="90%" maxW={"925px"}>
+				<Stack direction="column" spacing="25px">
+					<ProjectPreview />
+					<MembersPreview />
+					<TicketsPreview />
+				</Stack>
+			</Flex>
 		</Layout>
 	);
 };

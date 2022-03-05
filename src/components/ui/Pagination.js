@@ -3,14 +3,14 @@ import { Flex, Button, Box } from "@chakra-ui/react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 
 const Pagination = ({
-	totalMembers,
-	membersPerPage,
-	handleClick,
-	currentPage,
+	totalItems = 3,
+	itemsPerPage = 3,
+	handleClick = () => {},
+	currentPage = 0,
 }) => {
 	const pageNumbers = [];
 
-	for (let i = 0; i < Math.ceil(totalMembers / membersPerPage); i++) {
+	for (let i = 0; i < Math.ceil(totalItems / itemsPerPage); i++) {
 		pageNumbers.push(i);
 	}
 
@@ -32,6 +32,7 @@ const Pagination = ({
 						onClick={() => handleClick(currentPage - 1)}
 					/>
 				)}
+
 				<Box mx="8px">
 					{pageNumbers.map(n => {
 						return (
@@ -51,6 +52,7 @@ const Pagination = ({
 						);
 					})}
 				</Box>
+
 				{currentPage !== pageNumbers.length - 1 && (
 					<ChevronRightIcon
 						fontSize="28px"

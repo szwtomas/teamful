@@ -1,9 +1,16 @@
 import React, { useContext } from "react";
 import ProjectContext from "contexts/ProjectContext";
 import { Flex, Heading, Text, Link } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
 const ProjectPreview = () => {
 	const { project } = useContext(ProjectContext);
+
+	let navigate = useNavigate();
+
+	const handleClick = () => {
+		navigate("/szwtomas/projectdescription");
+	};
 
 	return (
 		<Flex
@@ -27,7 +34,9 @@ const ProjectPreview = () => {
 				</Text>
 			</Flex>
 			<Flex mt={["20px", "20px", "auto"]} ml="12px">
-				<Link color="green.400">View project details</Link>
+				<Link color="green.400" onClick={handleClick}>
+					View project details
+				</Link>
 			</Flex>
 		</Flex>
 	);

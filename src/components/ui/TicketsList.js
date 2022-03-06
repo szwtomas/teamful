@@ -46,7 +46,7 @@ const TicketItem = ({
 
 const TicketsList = ({ tickets = [] }) => {
 	return (
-		<Flex flexDir={"column"} mt={5} width="90%" mb={4}>
+		<Flex flexDir={"column"} mt={5} width="90%">
 			<Heading as="h3" width="100%" textAlign={"center"}>
 				Tickets
 			</Heading>

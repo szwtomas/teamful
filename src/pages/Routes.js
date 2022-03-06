@@ -6,6 +6,7 @@ import LogIn from "./LogIn";
 import About from "./About";
 import Dashboard from "./Dashboard";
 import UserProjectsPage from "./UserProjectsPage";
+import ProjectDescriptionPage from "./ProjectDescriptionPage";
 
 const RoutesWrapper = () => {
 	return (
@@ -19,6 +20,10 @@ const RoutesWrapper = () => {
 				<Route path="/:username">
 					<Route path="projects" element={<UserProjectsPage />} />
 					<Route path="dashboard" element={<Dashboard />} />
+					<Route
+						path="projectdescription"
+						element={<ProjectDescriptionPage />}
+					/>
 				</Route>
 			</Routes>
 		</BrowserRouter>

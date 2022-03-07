@@ -12,10 +12,19 @@ import {
 	Text,
 	Textarea,
 	Button,
+	useDisclosure,
+	Modal,
+	ModalOverlay,
+	ModalContent,
+	ModalHeader,
+	ModalCloseButton,
+	ModalBody,
+	ModalFooter,
 } from "@chakra-ui/react";
 import { CheckIcon, EditIcon } from "@chakra-ui/icons";
 import Separator from "./Separator";
 import MembersPreview from "./MembersPreview";
+import AddMemberModal from "./AddMemberModal";
 
 const ProjectDescription = () => {
 	const { project } = useContext(ProjectContext);
@@ -41,6 +50,8 @@ const ProjectDescription = () => {
 	const handleDescriptionInputChange = evt => {
 		setEditDescriptionText(evt.target.value);
 	};
+
+	const { isOpen, onOpen, onClose } = useDisclosure();
 
 	return (
 		<Flex width="100%" ml="auto" mr="auto">
@@ -144,13 +155,14 @@ const ProjectDescription = () => {
 						<Heading as="h3" fontSize={"xl"}>
 							Members
 						</Heading>
-						<Link color="green.400" fontSize="lg">
+						<Link color="green.400" fontSize="lg" onClick={onOpen}>
 							Add new members
 						</Link>
 					</Stack>
 					<MembersPreview showTitle={false} showEdit={true} />
 				</Stack>
 			</Stack>
+			<AddMemberModal onClose={onClose} isOpen={isOpen} />
 		</Flex>
 	);
 };

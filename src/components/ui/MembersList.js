@@ -37,16 +37,20 @@ const MembersList = ({
 							<Spacer />
 							<Stack direction="row" spacing={4}>
 								<Text>{member.role}</Text>
-								<Icon
-									as={EditIcon}
-									transition="all 0.2s ease"
-									_hover={hoverStyle}
-								/>
-								<Icon
-									as={DeleteIcon}
-									transition="all 0.2s ease"
-									_hover={hoverStyle}
-								/>
+								{showEdit && (
+									<>
+										<Icon
+											as={EditIcon}
+											transition="all 0.2s ease"
+											_hover={hoverStyle}
+										/>
+										<Icon
+											as={DeleteIcon}
+											transition="all 0.2s ease"
+											_hover={hoverStyle}
+										/>
+									</>
+								)}
 							</Stack>
 						</Flex>
 						{i !== currentMembers.length - 1 && <Separator />}

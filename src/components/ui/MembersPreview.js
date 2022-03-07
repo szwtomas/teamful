@@ -32,7 +32,7 @@ const MembersPreview = ({ showTitle = true, showEdit = false }) => {
 				members={members}
 				currentPage={currentPage}
 				membersLimit={membersPerPage}
-				showRemove={showEdit}
+				showEdit={showEdit}
 			/>
 			<Pagination
 				itemsPerPage={membersPerPage}

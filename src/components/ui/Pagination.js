@@ -18,7 +18,7 @@ const Pagination = ({
 		<nav>
 			<Flex
 				direction="row"
-				mt={"20px"}
+				mt={"2px"}
 				alignItems="center"
 				justifyContent={"center"}
 			>

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import {
 	Flex,
-	Box,
 	Text,
 	IconButton,
 	Stack,
@@ -14,6 +13,7 @@ import SideBarItems from "components/containers/SideBarItems";
 
 const SideBar = () => {
 	const [asideIsLarge, setAsideIsLarge] = useState(true);
+	const width = asideIsLarge ? 240 : 80;
 
 	return (
 		<Flex
@@ -21,7 +21,7 @@ const SideBar = () => {
 			bg={"gray.200"}
 			left="0"
 			m={0}
-			w={asideIsLarge ? "240px" : "80px"}
+			w={`${width}px`}
 			boxShadow="0 14px 12px 0 rgba(0, 0, 0, 0.3)"
 			flexDir="column"
 			justifyContent="space-between"
@@ -32,12 +32,13 @@ const SideBar = () => {
 			overflow="hidden"
 			position="sticky"
 			top="8vh"
+			transition="all 0.3s ease"
 		>
 			<Flex
 				pr={asideIsLarge ? "10px" : "0"}
 				flexDirection="row"
 				w="100%"
-				alignItems={asideIsLarge ? "center" : "center"}
+				alignItems={"center"}
 				justifyContent="space-around"
 				mt={2}
 			>

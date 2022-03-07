@@ -8,13 +8,14 @@ const ProjectDescriptionPage = () => {
 		<Layout>
 			<Flex
 				width={"95%"}
+				height="min-content"
 				maxWidth="1050px"
 				ml={"auto"}
 				mr={"auto"}
 				border={"2px solid lightgray"}
 				borderRadius={10}
-				mt={"25px"}
-				p={3}
+				mt={"45px"}
+				p={5}
 			>
 				<ProjectDescription />
 			</Flex>

@@ -67,12 +67,19 @@ const AddMemberModal = ({ isOpen, onClose }) => {
 							<Heading as="h5" fontSize="lg">
 								Message:
 							</Heading>
-							<Textarea placeholder="For the user" />
+							<Textarea
+								placeholder="For the user"
+								_focus={{ border: "1px solid #48BB78" }}
+							/>
 						</Stack>
 					</Stack>
 				</ModalBody>
 				<ModalFooter>
-					<Button color="white" bg={"green.400"}>
+					<Button
+						color="white"
+						bg={"green.400"}
+						_focus={{ border: "1px solid #48BB78" }}
+					>
 						Send Invite
 					</Button>
 				</ModalFooter>

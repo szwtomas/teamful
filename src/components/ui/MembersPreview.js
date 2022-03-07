@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import Pagination from "components/ui/Pagination";
 import MembersList from "components/ui/MembersList";
 import { getMembers } from "assets/data/members";
-import { Box, Heading } from "@chakra-ui/react";
+import { Heading } from "@chakra-ui/react";
 
-const MembersPreview = () => {
+const MembersPreview = ({ showTitle = true, showEdit = false }) => {
 	const [members, setMembers] = useState([]);
 	const [currentPage, setCurrentPage] = useState(0);
 
@@ -22,14 +22,17 @@ const MembersPreview = () => {
 	};
 
 	return (
-		<Box>
-			<Heading textAlign={"center"} as="h3" fontSize={"2xl"} mt={5}>
-				Team members
-			</Heading>
+		<>
+			{showTitle && (
+				<Heading textAlign={"center"} as="h3" fontSize={"2xl"} mt={5}>
+					Team members
+				</Heading>
+			)}
 			<MembersList
 				members={members}
 				currentPage={currentPage}
 				membersLimit={membersPerPage}
+				showRemove={showEdit}
 			/>
 			<Pagination
 				itemsPerPage={membersPerPage}
@@ -37,7 +40,7 @@ const MembersPreview = () => {
 				handleClick={handlePageChange}
 				currentPage={currentPage}
 			/>
-		</Box>
+		</>
 	);
 };
 

@@ -15,6 +15,7 @@ import {
 } from "@chakra-ui/react";
 import { CheckIcon, EditIcon } from "@chakra-ui/icons";
 import Separator from "./Separator";
+import MembersPreview from "./MembersPreview";
 
 const ProjectDescription = () => {
 	const { project } = useContext(ProjectContext);
@@ -137,6 +138,18 @@ const ProjectDescription = () => {
 					)}
 				</Stack>
 				<Separator />
+				<Stack direction="column">
+					{/*   ------- MEMBERS  -------   */}
+					<Stack direction={"row"} spacing={8}>
+						<Heading as="h3" fontSize={"xl"}>
+							Members
+						</Heading>
+						<Link color="green.400" fontSize="lg">
+							Add new members
+						</Link>
+					</Stack>
+					<MembersPreview showTitle={false} showEdit={true} />
+				</Stack>
 			</Stack>
 		</Flex>
 	);

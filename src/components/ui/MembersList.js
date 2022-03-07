@@ -1,7 +1,22 @@
 import React, { useState, useEffect } from "react";
-import { Box, Flex, Text, Spacer, Divider } from "@chakra-ui/react";
+import { Box, Flex, Text, Spacer, Stack, Icon } from "@chakra-ui/react";
+import Separator from "./Separator";
+import { DeleteIcon, EditIcon } from "@chakra-ui/icons";
 
-const MembersList = ({ members, currentPage, membersLimit }) => {
+const transitionStyles = {
+	transition: "all 0.5 ease",
+};
+
+const hoverStyle = {
+	transform: "scale(1.15)",
+};
+
+const MembersList = ({
+	members,
+	currentPage,
+	membersLimit,
+	showEdit = false,
+}) => {
 	const [currentMembers, setCurrentMembers] = useState([]);
 
 	useEffect(() => {
@@ -20,17 +35,21 @@ const MembersList = ({ members, currentPage, membersLimit }) => {
 						<Flex p={2}>
 							<Text>{member.name}</Text>
 							<Spacer />
-							<Text>{member.role}</Text>
+							<Stack direction="row" spacing={4}>
+								<Text>{member.role}</Text>
+								<Icon
+									as={EditIcon}
+									transition="all 0.2s ease"
+									_hover={hoverStyle}
+								/>
+								<Icon
+									as={DeleteIcon}
+									transition="all 0.2s ease"
+									_hover={hoverStyle}
+								/>
+							</Stack>
 						</Flex>
-						{i !== currentMembers.length - 1 && (
-							<Divider
-								orientation="horizontal"
-								size="8px"
-								style={{
-									border: "1px solid lightgray",
-								}}
-							/>
-						)}
+						{i !== currentMembers.length - 1 && <Separator />}
 					</Box>
 				);
 			})}

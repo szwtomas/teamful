@@ -72,7 +72,9 @@ const AddMemberModal = ({ isOpen, onClose }) => {
 					</Stack>
 				</ModalBody>
 				<ModalFooter>
-					<Button colorScheme={"green"}>Send Invite</Button>
+					<Button color="white" bg={"green.400"}>
+						Send Invite
+					</Button>
 				</ModalFooter>
 			</ModalContent>
 		</Modal>

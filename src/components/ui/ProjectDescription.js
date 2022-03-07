@@ -21,7 +21,7 @@ import {
 	ModalBody,
 	ModalFooter,
 } from "@chakra-ui/react";
-import { CheckIcon, EditIcon } from "@chakra-ui/icons";
+import { AddIcon, CheckIcon, EditIcon } from "@chakra-ui/icons";
 import Separator from "./Separator";
 import MembersPreview from "./MembersPreview";
 import AddMemberModal from "./AddMemberModal";
@@ -72,6 +72,7 @@ const ProjectDescription = () => {
 								border="2px"
 								value={editTitleText}
 								onChange={handleTitleInputChange}
+								_focus={{ border: "3px solid #48BB78" }}
 							/>
 							<InputRightElement
 								children={<CheckIcon color="green.400" />}
@@ -118,6 +119,7 @@ const ProjectDescription = () => {
 								onChange={handleDescriptionInputChange}
 								placeholder="Here is a sample placeholder"
 								size="sm"
+								_focus={{ border: "2px solid #48BB78" }}
 							/>
 							<Button
 								onClick={handleDescriptionEdit}
@@ -151,14 +153,25 @@ const ProjectDescription = () => {
 				<Separator />
 				<Stack direction="column">
 					{/*   ------- MEMBERS  -------   */}
-					<Stack direction={"row"} spacing={8}>
+					<Flex
+						flexDir={"row"}
+						spacing={8}
+						alignItems="center"
+						justifyContent={"space-between"}
+					>
 						<Heading as="h3" fontSize={"xl"}>
 							Members
 						</Heading>
-						<Link color="green.400" fontSize="lg" onClick={onOpen}>
-							Add new members
-						</Link>
-					</Stack>
+						<Button
+							color="white"
+							leftIcon={<AddIcon />}
+							bg="green.400"
+							variant="solid"
+							onClick={onOpen}
+						>
+							Add new member
+						</Button>
+					</Flex>
 					<MembersPreview showTitle={false} showEdit={true} />
 				</Stack>
 			</Stack>

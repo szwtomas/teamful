@@ -41,11 +41,19 @@ const NavBar = ({ projectTitle }) => {
 	};
 
 	return (
-		<nav style={{ overflow: "hidden" }}>
-			<Box bg={bg} overflow="hidden">
+		<Box
+			bg={bg}
+			overflow="hidden"
+			h="8vh"
+			minHeight={"70px"}
+			position="sticky"
+			top={"0"}
+			width="100%"
+			margin="0px auto"
+		>
+			<header style={{ height: "100%" }}>
 				<Flex
-					h={"8vh"}
-					minHeight={"65px"}
+					h={"100%"}
 					alignItems={"center"}
 					justifyContent={"space-between"}
 					px={[6, 10, 16]}
@@ -137,8 +145,8 @@ const NavBar = ({ projectTitle }) => {
 						</DrawerBody>
 					</DrawerContent>
 				</Drawer>
-			</Box>
-		</nav>
+			</header>
+		</Box>
 	);
 };
 

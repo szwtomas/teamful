@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Flex, Box } from "@chakra-ui/react";
+import { Flex, Link, Box } from "@chakra-ui/react";
 import { getTickets } from "assets/data/tickets";
 import TicketsList from "components/ui/TicketsList";
 
@@ -13,9 +13,21 @@ const TicketsPreview = () => {
 	}, []);
 
 	return (
-		<Flex justifyContent={"center"} width="100%">
-			<TicketsList tickets={tickets} />
-		</Flex>
+		<>
+			<Flex
+				flexDir="column"
+				justifyContent={"center"}
+				alignItems="center"
+				width="100%"
+			>
+				<TicketsList tickets={tickets} />
+				<Box ml="auto" mr="5%">
+					<Link color="green.400" fontSize="lg">
+						View Board
+					</Link>
+				</Box>
+			</Flex>
+		</>
 	);
 };
 

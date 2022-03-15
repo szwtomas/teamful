@@ -4,7 +4,7 @@ import ProjectPreview from "components/ui/ProjectPreview";
 import ProjectContext from "contexts/ProjectContext";
 import ProjectSelection from "components/ui/ProjectSelection";
 import { Flex, Stack } from "@chakra-ui/react";
-import MembersPreview from "components/ui/MembersPreview";
+import MembersPreview from "components/containers/MembersPreview";
 import TicketsPreview from "components/containers/TicketsPreview";
 
 // TODO: Fill with ProjectPreview, MembersPreview and TicketsPreview Components (and statistics?)

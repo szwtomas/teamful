@@ -12,9 +12,16 @@ const MembersPreview = ({ showTitle = true, showEdit = false }) => {
 	const membersPerPage = 4;
 
 	useEffect(() => {
-		getMembers()
-			.then(members => setMembers(members))
-			.catch(err => console.error(err));
+		const req = async () => {
+			try {
+				const res = getMembers();
+				setMembers(res);
+			} catch (err) {
+				console.error(err);
+			}
+		};
+
+		req();
 	}, []);
 
 	const handlePageChange = page => {

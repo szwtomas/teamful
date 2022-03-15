@@ -7,6 +7,7 @@ import About from "./About";
 import Dashboard from "./Dashboard";
 import UserProjectsPage from "./UserProjectsPage";
 import ProjectDescriptionPage from "./ProjectDescriptionPage";
+import BoardPage from "./BoardPage";
 
 const RoutesWrapper = () => {
 	return (
@@ -24,6 +25,7 @@ const RoutesWrapper = () => {
 						path="projectdescription"
 						element={<ProjectDescriptionPage />}
 					/>
+					<Route path="board" element={<BoardPage />} />
 				</Route>
 			</Routes>
 		</BrowserRouter>

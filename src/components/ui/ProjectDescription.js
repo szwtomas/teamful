@@ -13,17 +13,10 @@ import {
 	Textarea,
 	Button,
 	useDisclosure,
-	Modal,
-	ModalOverlay,
-	ModalContent,
-	ModalHeader,
-	ModalCloseButton,
-	ModalBody,
-	ModalFooter,
 } from "@chakra-ui/react";
 import { AddIcon, CheckIcon, EditIcon } from "@chakra-ui/icons";
 import Separator from "./Separator";
-import MembersPreview from "./MembersPreview";
+import MembersPreview from "../containers/MembersPreview";
 import AddMemberModal from "./AddMemberModal";
 
 const ProjectDescription = () => {

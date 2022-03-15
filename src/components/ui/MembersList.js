@@ -27,6 +27,9 @@ const MembersList = ({
 		setCurrentMembers(members.slice(offset, offset + membersLimit));
 	}, [currentPage, membersLimit, members]);
 
+	console.log("Inside MembersList:");
+	console.log(members);
+
 	return (
 		<Box m={4} p={3} borderWidth={4} borderRadius="6px">
 			{currentMembers.map((member, i) => {

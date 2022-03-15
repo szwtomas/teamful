@@ -14,7 +14,7 @@ const MembersPreview = ({ showTitle = true, showEdit = false }) => {
 	useEffect(() => {
 		const req = async () => {
 			try {
-				const res = getMembers();
+				const res = await getMembers();
 				setMembers(res);
 			} catch (err) {
 				console.error(err);
@@ -27,6 +27,8 @@ const MembersPreview = ({ showTitle = true, showEdit = false }) => {
 	const handlePageChange = page => {
 		setCurrentPage(page);
 	};
+
+	console.log(members);
 
 	return (
 		<>

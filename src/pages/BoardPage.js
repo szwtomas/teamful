@@ -10,14 +10,15 @@ const BoardPage = () => {
 				width="90%"
 				maxWidth="1050px"
 				h="min-content"
-				border={"2px solid black"}
 				ml="auto"
 				mr="auto"
-				mt={1}
+				mt={5}
 				p={5}
 				flexDir="column"
+				border={"2px solid lightgrey"}
+				borderRadius="6px"
 			>
-				<Heading as="h2" textAlign={"center"}>
+				<Heading as="h2" textAlign={"center"} mb={4}>
 					Tickets
 				</Heading>
 				<BoardContainer />

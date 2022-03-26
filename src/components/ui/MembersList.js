@@ -3,10 +3,6 @@ import { Box, Flex, Text, Spacer, Stack, Icon } from "@chakra-ui/react";
 import Separator from "./Separator";
 import { DeleteIcon, EditIcon } from "@chakra-ui/icons";
 
-const transitionStyles = {
-	transition: "all 0.5 ease",
-};
-
 const hoverStyle = {
 	transform: "scale(1.15)",
 };
@@ -20,15 +16,12 @@ const MembersList = ({
 	const [currentMembers, setCurrentMembers] = useState([]);
 
 	useEffect(() => {
-		// Calculates the members tu be listed in the current page
-		// we begin at the page number times the members page page, and
+		// Calculates the members to be listed in the current page
+		// we begin at the page number times the members page, and
 		// the upper bound is that offset plus the page limit
 		const offset = currentPage * membersLimit;
 		setCurrentMembers(members.slice(offset, offset + membersLimit));
 	}, [currentPage, membersLimit, members]);
-
-	console.log("Inside MembersList:");
-	console.log(members);
 
 	return (
 		<Box m={4} p={3} borderWidth={4} borderRadius="6px">

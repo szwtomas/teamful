@@ -29,7 +29,6 @@ const BoardContainer = () => {
 
 	return (
 		<Flex width="100%" height={"min-content"} flexDir={"column"}>
-			<Heading as="h2" fontSize={"5xl"} textAlign="center" />
 			<Board
 				tickets={tickets}
 				currentPage={currentPage}

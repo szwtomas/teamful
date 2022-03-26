@@ -28,8 +28,6 @@ const MembersPreview = ({ showTitle = true, showEdit = false }) => {
 		setCurrentPage(page);
 	};
 
-	console.log(members);
-
 	return (
 		<>
 			{showTitle && (

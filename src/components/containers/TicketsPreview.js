@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Flex, Link, Box } from "@chakra-ui/react";
+import { Link as RouterLink } from "react-router-dom";
+import { Flex, Link as StyledLink, Box } from "@chakra-ui/react";
 import { getTickets } from "assets/data/tickets";
 import TicketsList from "components/ui/TicketsList";
 
@@ -22,9 +23,14 @@ const TicketsPreview = () => {
 			>
 				<TicketsList tickets={tickets} />
 				<Box ml="auto" mr="5%">
-					<Link color="green.400" fontSize="lg">
+					<StyledLink
+						color="green.400"
+						fontSize="lg"
+						as={RouterLink}
+						to="/szwtomas/board"
+					>
 						View Board
-					</Link>
+					</StyledLink>
 				</Box>
 			</Flex>
 		</>
